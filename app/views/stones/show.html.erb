@@ -5,3 +5,4 @@
 <%= link_to 'Return to all stones', stones_path %>
 <%= link_to 'Delete stone', stone_path(@stone), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
 <%= link_to 'Edit Stone', edit_stone_path(@stone) %>
+<%= link_to 'Book', stone_bookings(@stone) %>
