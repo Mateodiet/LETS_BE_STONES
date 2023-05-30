@@ -1,8 +1,15 @@
 class BookingsController < ApplicationController
+  def new
+    @stone = Stone.find(params[:stone_id])
+    @booking = Booking.new
+  end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @stone = Stone.find(params[:stones_id])
     @booking.stone = @stone
+    @booking.status = "pending"
     if @booking.save
       redirect_to stone_path(@stone)
     else
@@ -25,5 +32,11 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "cancel"
     @booking.destroy
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:comment, :user, :stone, :status, :start_date, :end_date)
   end
 end
