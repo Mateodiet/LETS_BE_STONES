@@ -20,13 +20,7 @@ class StonesController < ApplicationController
       redirect_to new_stone_path
     end
   end
-
-  private
-
-  def stone_params
-    params.require(:stone).permit(:name, :description, :price, :user)
-  end
-
+  
   def edit
     @stone = Stone.find(params[:id])
   end
@@ -42,4 +36,12 @@ class StonesController < ApplicationController
     @stone.destroy
     redirect_to stone_path, status: :see_other
   end
+
+  private
+
+  def stone_params
+    params.require(:stone).permit(:name, :description, :price, :user)
+  end
+
+
 end
