@@ -4,8 +4,7 @@ class StonesController < ApplicationController
   end
 
   def show
-    @stones = Stone.find(params[:id])
-
+    @stone = Stone.find(params[:id])
   end
 
   def new
@@ -27,7 +26,7 @@ class StonesController < ApplicationController
 
   def update
     @stone = Stone.find(params[:id])
-    @stone.update(params[:stones])
+    @stone.update(stones_params)
     redirect_to stone_path(@stone)
   end
 
