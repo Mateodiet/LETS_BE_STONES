@@ -1,15 +1,6 @@
-<h1>Nos plus belles pierre à l'honneur</h1>
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url();">
-  <div class="container">
-    <h2>Bienvenue sur notre page de pierres précieuses <strong> avec les plus belles pierres </strong> du monde </strong>!</h2>
-  </div>
-</div>
-
-
+  <% @stones.each do |stone| %>
+  <%= link_to stone.name, stone_path(stone) %>
+  <% end %>
 <%= link_to "ajoute une pierre", new_stone_path %>
-
-      <% @stones.each do |stone| %>
-      <%= link_to stone.name, stone_path(stone) %>
-   <% end %>

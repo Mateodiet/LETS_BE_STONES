@@ -20,7 +20,7 @@ class StonesController < ApplicationController
       redirect_to new_stone_path
     end
   end
-  
+
   def edit
     @stone = Stone.find(params[:id])
   end
@@ -34,7 +34,7 @@ class StonesController < ApplicationController
   def destroy
     @stone = Stone.find(params[:id])
     @stone.destroy
-    redirect_to stone_path, status: :see_other
+    redirect_to stones_path, status: :see_other
   end
 
   private
