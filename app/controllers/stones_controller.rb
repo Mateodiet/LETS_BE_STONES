@@ -12,21 +12,22 @@ class StonesController < ApplicationController
   end
 
   def create
-    @stone = Stone.new(params[:stones])
-    if stone.save
-      redirect_to stone_path(@stone)
+    @stone = Stone.new(stone_params)
+    @stone.user = current_user
+    if @stone.save
+      redirect_to stones_path
     else
-      render :new
+      redirect_to new_stone_path
     end
   end
-
+  
   def edit
     @stone = Stone.find(params[:id])
   end
 
   def update
     @stone = Stone.find(params[:id])
-    @stone.update(stones_params)
+    @stone.update(stone_params)
     redirect_to stone_path(@stone)
   end
 
@@ -35,10 +36,12 @@ class StonesController < ApplicationController
     @stone.destroy
     redirect_to stone_path, status: :see_other
   end
-end
 
-private
+  private
 
-def stones_params
-  params.require(:stones).permit(:name, :description, :price, :rating)
+  def stone_params
+    params.require(:stone).permit(:name, :description, :price, :user)
+  end
+
+
 end
