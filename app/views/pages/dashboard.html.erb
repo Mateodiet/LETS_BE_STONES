@@ -1,1 +1,61 @@
-<%= link_to 'My bookings' %>
+  <h1 class="text-center">My dashboard</h1>
+
+<div class='d-flex justify-content-around'>
+    <div id='stones'>
+      <h2>My stones</h2>
+    <% @stones.each do |stone| %>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"> <%= link_to stone.name, stone_path(stone) %></h5>
+            <p class="card-text"><%= stone.description %></p>
+            <a href="#" class="btn btn-primary"><%= link_to 'Edit Stone', edit_stone_path(stone) %></a>
+            <a href="#"> <%= link_to 'Delete stone', stone_path(stone), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %></a>
+    <% end %>
+          </div>
+        </div>
+            <%= link_to "ajoute une pierre", new_stone_path %>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id='bookings'>
+      <h2>My bookings</h2>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
