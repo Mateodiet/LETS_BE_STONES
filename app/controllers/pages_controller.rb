@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   end
 
   def home
-    @stones = Stone.last(4)
+    @stones = Stone.last(6)
   end
 
 end
