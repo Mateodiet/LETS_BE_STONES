@@ -1,7 +1,7 @@
 require 'open-uri'
 User.destroy_all
 p "all user destroyed"
-user = User.create(email: "qql@qql.fr", password: "1234556", username: "mat")
+user = User.create(email: "qql@qql.fr", password: "123456", username: "mat")
 p "#{User.count} user created"
 Stone.destroy_all
 p "all stones destroyed"
