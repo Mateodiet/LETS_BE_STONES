@@ -6,4 +6,9 @@ class PagesController < ApplicationController
 
   def dashboard
   end
+
+  def home
+    @stones = Stone.last(4)
+  end
+
 end

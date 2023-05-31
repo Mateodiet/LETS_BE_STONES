@@ -1,6 +1,14 @@
 
 
-  <% @stones.each do |stone| %>
-  <%= link_to stone.name, stone_path(stone) %>
-  <% end %>
+<% @stones.each do |stone| %>
+<%= link_to stone_path(stone) %>
 <%= link_to "ajoute une pierre", new_stone_path %>
+
+  <div class="card-product">
+    <%= image_tag stone.image %>
+      <div class="card-product-infos">
+        <h3> <%= stone.name %></h3>
+        <p> <%= stone.description %> </p>
+      </div>
+  </div>
+<% end %>
