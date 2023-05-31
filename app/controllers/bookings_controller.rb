@@ -7,11 +7,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @stone = Stone.find(params[:stones_id])
+    @stone = Stone.find(params[:stone_id])
     @booking.stone = @stone
     @booking.status = "pending"
     if @booking.save
-      redirect_to stone_path(@stone)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,13 +25,11 @@ class BookingsController < ApplicationController
   def decline
     @booking = Booking.find(params[:id])
     @booking.status = "decline"
-    @booking.destroy
   end
 
   def cancel
     @booking = Booking.find(params[:id])
     @booking.status = "cancel"
-    @booking.destroy
   end
 
   private
