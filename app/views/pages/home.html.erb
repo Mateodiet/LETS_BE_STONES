@@ -1,138 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Let's Be Stones</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Products</a>
-        <a class="nav-link" href="#">About</a>
-        <a class="nav-link" href="#">Dashboard</a>
-          <input
-        type="search"
-        class="form-control rounded"
-        placeholder="Search"
-        aria-label="Search"
-        aria-describedby="search-addon"
-      />
-      <span class="input-group-text border-0" id="search-addon">
-        <i class="fas fa-search"></i>
 
+<div class="row">
+  <% @stones.each do |stone|  %>
+  <div class="col-12 col-md-4">
 
-         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <ul class="navbar-nav d-flex flex-row">
-
-      <li class="nav-item me-3 me-lg-0">
-        <a class="nav-link" href="#">
-          <i class="fas fa-shopping-cart" ></i>
-        </a>
-      </li>
-
-      </li>
-
-      <li class="nav-item me-3 me-lg-0 dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i class="fas fa-user"></i>
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li>
-            <a class="dropdown-item" href="#">créer un compte</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">se connecter</a>
-          </li>
-          <li><hr class="dropdown-divider" /></li>
-          <li>
-            <a class="dropdown-item" href="#">se déconnecter</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-
-      </span>
+    <div class="card" style="width: 300px; height: 350px;">
+      <img src="https://static.wixstatic.com/media/101e87_1b07e41f55b54d5489083a21c025a39d~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/101e87_1b07e41f55b54d5489083a21c025a39d~mv2.jpg" class="card-img-top" alt="..." style="height:120px; object-fit:contain;">
+      <div class="card-body">
+        <h5 class="card-title"><%= stone.name %></h5>
+        <p class="card-text"><%= stone.description %></p>
+        <%= link_to "see details", stone_path(stone), class:"btn btn-warning text-center w-100"  %>
       </div>
     </div>
+
   </div>
-</nav>
 
 
 
-<div class="cards">
-  <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+
+  <% end %>
 </div>
-</div>
-
-
-
-
-<div class="cards">
-  <div style="display:flex: left; padding-left: 80px; flex-item">
-   <img src="https://static.wixstatic.com/media/101e87_1b07e41f55b54d5489083a21c025a39d~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/101e87_1b07e41f55b54d5489083a21c025a39d~mv2.jpg" width="250" />
-   <span class="fa fa-star checked"></span>
-   <img src="https://static.wixstatic.com/media/101e87_5d4c92adaec941368fdc9e1c1168bfa9~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/101e87_5d4c92adaec941368fdc9e1c1168bfa9~mv2.jpg" width="250" />
-   <img src="https://static.wixstatic.com/media/101e87_7bb7ddd8c3d54428b7c8e65e853e0294~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/101e87_7bb7ddd8c3d54428b7c8e65e853e0294~mv2.jpg" width="250" />
-   <img src="https://static.wixstatic.com/media/101e87_5c967884a47244449af0762755af073a~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/101e87_5c967884a47244449af0762755af073a~mv2.jpg" width="250" />
-   <img src="https://static.wixstatic.com/media/101e87_2ad559241fc84fbc82e9f3f7dadd70fb~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/101e87_2ad559241fc84fbc82e9f3f7dadd70fb~mv2.jpg" width="250" />
-</div>
-
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
-</head>
-<body>
-<footer>
-<div class="footer">
-<div class="row">
-<div class=“row justify-content-center”>
-<a href="#"><i class="fa fa-facebook"></i></a>
-<a href="#"><i class="fa fa-instagram"></i></a>
-<a href="#"><i class="fa fa-youtube"></i></a>
-<a href="#"><i class="fa fa-twitter"></i></a>
-</div>
-
-<div class="row">
-<ul>
-<li><a href="#">Contact us</a></li>
-<li><a href="#">Our Services</a></li>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms & Conditions</a></li>
-</ul>
-</div>
-
-<div class=“row justify-content-center”>
- Copyright © 2023 - All rights reserved
-</div>
-</div>
-</footer>

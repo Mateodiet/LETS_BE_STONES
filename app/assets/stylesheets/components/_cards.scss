@@ -1,29 +1,21 @@
-.cards {
+.cards-stones {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 8px;
+
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+
+
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
@@ -32,9 +24,25 @@
   }
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards-stones {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards-stones {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-stones {
+    grid-template-columns: 1fr;
   }
 }
