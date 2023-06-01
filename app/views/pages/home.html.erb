@@ -2,28 +2,46 @@
 <div class="banner">
 
   <div class="text-block">
-    <h1> La nouvelle  <strong> marketplace</strong> pour <strong>vos pierres </strong>!</h1>
-    <%= link_to 'Découvrez nos produits', stones_path, class: "text-block" %>
+    <div class="container">
+
+      <h1> La nouvelle  <strong> marketplace</strong> pour <strong>vos pierres </strong>!</h1>
+      <div class="text-center">
+        <%= link_to 'Découvrez nos produits', stones_path, class: "btn-white" %>
+      </div>
+    </div>
   </div>
 </div>
   <%# fin de bannière %>
   <%# début prop produit %>
 
 <div class="container">
-  <div class='row'>
+  <div class="row">
     <% @stones.each do |stone|  %>
-    <div class='col-12 col-md-4'>
-      <div class=“card” style="width: 300px; height: 350px;">
-        <img src=“https://static.wixstatic.com/media/101e87_1b07e41f55b54d5489083a21c025a39d~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/101e87_1b07e41f55b54d5489083a21c025a39d~mv2.jpg” class=“card-img-top” alt=“...” style=“height:120px; object-fit:contain;“>
-          <div class=“card-body”>
-            <h5 class=“card-title”><%= stone.name %></h5>
-            <p class=“card-text”><%= stone.description %></p>
-            <%= link_to 'see details', stone_path(stone), class:'btn btn-warning text-center w-100'  %>
-          </div>
+    <div class="col-12 col-md-4">
+    <div class="card-home-stone">
+      <img src="https://static.wixstatic.com/media/101e87_1b07e41f55b54d5489083a21c025a39d~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/101e87_1b07e41f55b54d5489083a21c025a39d~mv2.jpg" alt="...">
+
+      <div class="card-home-stone-infos">
+        <div>
+          <h2><%= stone.name %></h2>
+          <p><%= stone.description %></p>
+        </div>
       </div>
+      <div class="text-center">
+        <%= link_to 'Voir les détails', root_path, class: "btn-blue"  %>
+      </div>
+
+    </div>
+
+
+
+
+
+
     </div>
     <% end %>
   </div>
+
 
 
 

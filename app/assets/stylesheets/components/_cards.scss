@@ -5,6 +5,60 @@
 
 }
 
+.paragraph-info{
+  height: 40px;
+}
+
+
+.card-body {
+  height: 216px;
+}
+
+
+
+
+// CARDS HOME
+
+.card-home-stone {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 350px;
+  margin-top: 24px;
+}
+
+.card-home-stone > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-home-stone h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-home-stone p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-home-stone .card-home-stone-infos {
+  padding: 16px;
+}
+
+.card-home-stone-infos{
+  height: 96px;
+  margin-bottom: 5px;
+
+}
+
+
+
+
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
