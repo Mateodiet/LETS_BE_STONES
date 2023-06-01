@@ -9,4 +9,5 @@ class PagesController < ApplicationController
     @stones = current_user.stones
     @bookings = current_user.bookings
   end
+
 end
