@@ -5,6 +5,7 @@ class StonesController < ApplicationController
 
   def show
     @stone = Stone.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -40,6 +41,6 @@ class StonesController < ApplicationController
   private
 
   def stone_params
-    params.require(:stone).permit(:name, :description, :price, :user)
+    params.require(:stone).permit(:name, :description, :price, :user, :image)
   end
 end
