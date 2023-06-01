@@ -10,8 +10,4 @@ class PagesController < ApplicationController
     @bookings = current_user.bookings
   end
 
-  def home
-    @stones = Stone.last(6)
-  end
-
 end
