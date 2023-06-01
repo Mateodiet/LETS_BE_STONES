@@ -1,10 +1,38 @@
-<% @stones.each do |stone| %>
+<h1> Nos produits</h1>
 
-  <div class="card-product">
-    <%= image_tag stone.image %>
-      <div class="card-product-infos">
-        <h3> <%= stone.name %></h3>
-        <p> <%= stone.description %> </p>
+<div class="container">
+  <div class="row">
+    <% @stones.each do |stone|  %>
+    <div class="col-12 col-md-4">
+    <div class="card-home-stone" id="card-index">
+      <img src="<%=stone.image%>" alt="...">
+
+      <div class="card-home-stone-infos" >
+        <div>
+          <h2><%= stone.name %></h2>
+          <p><%= stone.price %>€</p>
+        </div>
       </div>
+      <div class="text-center">
+        <%= link_to 'Voir les détails', root_path, class: "btn-blue"  %>
+      </div>
+
+    </div>
+
+
+
+
+
+
+    </div>
+    <% end %>
   </div>
-<% end %>
+
+
+
+
+
+
+  <%# fin prop produit %>
+
+</div>

@@ -31,7 +31,10 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+
 }
+
+
 
 .card-home-stone h2 {
   font-size: 16px;
@@ -56,8 +59,25 @@
 
 }
 
+#card-index{
+  height: 330px;
+}
 
+#card-index h2{
+ font-size: 17px;
+}
 
+#card-index img{
+  border-bottom: solid 1px rgb(228, 228, 228);
+}
+
+#card-index p {
+  font-size: 17px;
+}
+
+#card-index .card-home-stone-infos{
+  height: 70px;
+}
 
 
 // Extra large devices (large desktops, 1200px and up)
