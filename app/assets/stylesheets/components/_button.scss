@@ -11,3 +11,40 @@
 .btn-ghost:hover {
   opacity: 1;
 }
+
+
+.btn-blue{
+  background-color: #81b4b4;
+  padding: 8px 16px;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  display: inline;
+  font-weight: initial;
+
+}
+
+.btn-white{
+  background-color: white;
+  padding: 18px 40px;
+  border-radius: 50px;
+  color: #81b4b4;
+  text-decoration: none;
+  display: inline;
+  font-weight: initial;
+  font-size: 22px;
+
+}
+
+.btn-blue:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.btn-white:hover{
+  color: #81b4b4;
+  text-decoration: none;
+  opacity: 0.8;
+
+}
