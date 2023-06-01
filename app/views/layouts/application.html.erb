@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>LETSBeStones</title>
@@ -11,79 +12,15 @@
   </head>
 
   <body>
-
-
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Let's be stones</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-            <li class="nav-item">
-              <%= link_to "All stones", stones_path, class: "nav-link active"  %>
-            </li>
-
-            <li class="nav-item">
-              <%= link_to "Dashboard", dashboard_path, class: "nav-link active"  %>
-            </li>
-
-            <li class="nav-item">
-                <%= link_to new_stone_path, class: "nav-link active" do  %>
-                  <i class="fa-solid fa-plus"></i>
-                <% end %>
-            </li>
-          </ul>
-
-
-          <div class="d-flex align-items-center">
-
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-
-
-
-
-            <div class="collapse navbar-collapse ms-3" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto">
-                <% if user_signed_in? %>
-
-                  </li>
-                  <li class="nav-item">
-                    <%= link_to "Login", "#", class: "nav-link" %>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <%= image_tag "https://media.istockphoto.com/id/1300845620/fr/vectoriel/appartement-dic%C3%B4ne-dutilisateur-isol%C3%A9-sur-le-fond-blanc-symbole-utilisateur.jpg?s=612x612&w=0&k=20&c=BVOfS7mmvy2lnfBPghkN__k8OMsg7Nlykpgjn0YOHj0=", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                      <%= link_to "s'enregistrer", "#", class: "dropdown-item" %>
-                      <%= link_to "se connecter", "#", class: "dropdown-item" %>
-                      <%= link_to "se déconnecter", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-                    </div>
-                  </li>
-                <% else %>
-                  <li class="nav-item">
-                    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-
-
-
-
-        </div>
-      </div>
-    </nav>
+<%= render "shared/navbar" %>
 
     <div class="container">
       <%= yield %>
     </div>
+
+
+
+
 
     <footer>
       <div class="footer">
