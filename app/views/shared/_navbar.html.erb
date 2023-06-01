@@ -1,38 +1,66 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+  <%# #début de la navbar %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Let's be <strong>Stones<strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item" style ="background-color:white">
+              <%= link_to "Toutes les pierres", stones_path, class: "nav-link active"  %>
+            </li>
+
+
+            <li class="nav-item">
+                <%= link_to new_stone_path, class: "nav-link active" do  %>
+                  <i class="fa-solid fa-plus"></i>
+                <% end %>
+            </li>
+          </ul>
+
+
+          <div class="d-flex align-items-center">
+            <%# barre de recherche %>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" style = "background-color:white; border-color:#FFB4B4; color:#19A7CE"type="submit">Search</button>
+            </form>
+            <%# barre de recherche %>
+
+
+
+            <div class="collapse navbar-collapse ms-3" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto">
+                <% if user_signed_in? %>
+
+                  <li class="nav-item dropdown">
+                    <%= image_tag "https://images.unsplash.com/photo-1521133573892-e44906baee46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGllcnJlJTIwcHIlQzMlQTljaWV1c2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <%= link_to "Mon espace", dashboard_path, class: "dropdown-item" %>
+                      <%= link_to "Mes réservations", dashboard_path, class: "dropdown-item" %>
+                      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {turbo_method: :delete} %>
+                    </div>
+                  </li>
+                <% else %>
+                  <li class="nav-item">
+                    <%= link_to "Se connecter", user_session_path, class: "nav-link" %>
+                  </li>
+                <% end %>
+              </ul>
             </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </nav>
+
+      <%# fin de la navbar %>

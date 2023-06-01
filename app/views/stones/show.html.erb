@@ -1,32 +1,22 @@
-<div class="p-3"></div>
-<div class="container d-flex justify-content-between">
-    <div class="card p-3" style="width: 30rem;">
-      <img class="card-img-top border-bottom" src="<%= @stone.image %>" alt="<%= @stone.name %>image cap">
-        <div class="card-body">
-          <h5 class="card-title">
-          <div class="d-flex justify-content-between">
+<div class="box-show">
+  <div class="stones-show">
+      <img class="show-img" src="<%= @stone.image %>" alt="<%= @stone.name %>image cap">
+        <div class="stone-content"></div>
+          <div class="price-name-bar">
             <h2><%= @stone.name %></h2>
             <h4><%= @stone.price %>€/Semaine</h4>
           </div>
-          </div>
-            <p class="card-text"><%= @stone.description %></p>
-          <div class="d-flex justify-content-center p-3">
-            <%= link_to '  Menu  ', stones_path, class: "btn btn-warning btn-sm mb-2" %>
-          </div>
-    </div>
+            <p class=""><%= @stone.description %></p>
 
-      <div class="w-50 p-3">
+            <%= link_to '  Menu  ', stones_path, class: "btn btn-warning btn-sm mb-2" %>
+  </div>
+
+  <div class="flpkr">
         <%= simple_form_for [@stone, @booking], data: { controller: 'flatpickr' } do |f| %>
           <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
           <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" } } %>
           <%= f.input :comment %>
           <%= f.submit 'Ask owner for booking' %>
         <% end %>
-      </div>
-    </div>
-    <div class="p-3">
-    </div>
-
-
+  </div>
 </div>
- <div class="p-3"></div>

@@ -1,3 +1,41 @@
-.infos {
-  width: 500px;
+.box-show {
+  display: flex;
+  justify-content: space-around;
+}
+
+.show-img {
+  display: flex;
+  width: 350px;
+  height: 350px;
+  border-bottom: 1px solid grey;
+  align-items: center;
+}
+
+.stone-content {
+  padding: 8px;
+  color: black;
+}
+
+.stones-show {
+  background-color: white;
+  width: 35%;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, .1);
+  margin: 10px;
+  padding: 25px;
+}
+
+.price-name-bar {
+  display: flex;
+  flex-wrap: space-around;
+
+}
+
+.flpkr {
+  background-color: white;
+  width: 35%;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, .1);
+  margin: 10px;
+  padding: 25px;
 }
