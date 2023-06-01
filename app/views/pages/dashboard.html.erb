@@ -1,3 +1,4 @@
+<div class="pt-3"></div>
   <h1 class="text-center container mt-3 mb-3">My dashboard</h1>
 
 <div class='d-flex justify-content-around'>
@@ -9,8 +10,11 @@
           <div class="card-body">
             <h5 class="card-title"> <%= link_to stone.name, stone_path(stone), class: "text-decoration-none" %></h5>
             <p class="card-text"><%= stone.description %></p>
-            <a href="#"><%= link_to 'Edit Stone', edit_stone_path(stone), class: "btn btn-primary" %></a>
+<% if stone.user == current_user %>
+            <a href="#"><%= link_to 'Edit Stone', edit_stone_path(stone), class: "btn btn-warning" %></a>
             <a href="#"> <%= link_to 'Delete stone', stone_path(stone), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %></a>
+<%end%>
+
           </div>
         </div>
     <% end %>
@@ -20,30 +24,20 @@
     <div id='bookings'>
       <h2>My bookings</h2>
         <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="..." alt="Card image cap">
+         <% @stones.each do |stone| %>
+          <img class="card-img-top" src="<%= stone.image %>" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title"><%= stone.name %></h5>
+               <% @bookings.each do |booking| %>
+            <p class="card-text"> <%= booking.comment %></p>
+            <p class="card-text"> <%= booking.status %></p>
+            <p class="card-text"> <%= booking.start_date %></p>
+            <p class="card-text"> <%= booking.end_date %></p>
+
+               <% end %>
+                <% end %>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
