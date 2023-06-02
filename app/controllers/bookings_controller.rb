@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to espace_path
     else
-      redirect_to stone_path
+      redirect_to stone_path(@booking.stone)
     end
   end
 

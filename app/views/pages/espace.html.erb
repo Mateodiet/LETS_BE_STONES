@@ -1,32 +1,36 @@
-<h1>Bienvenue <%= current_user.username %> dans votre dashboard !</h1>
+<h1 class="text-center">Bienvenue <%= current_user.username %> dans votre gestionnaire !</h1>
 <div class="box-dash">
         <% @stones.each do |stone| %>
         <% stone.bookings.each do |booking| %>
   <div class="dash-cards">
-      <img class="dash-img" src="<%=stone.image%>" alt="<%=stone.name%> image">
     <div class="dash-card-content">
+      <img class="dash-img mb-3" src="<%=stone.image%>" alt="<%=stone.name%> image">
       <h5 class="name"> <%= link_to stone.name, stone_path(stone), class: "text-decoration-none" %></h5>
         <p class=""><%= stone.description %></p>
+    </div>
+        <div class="flex-end-btn">
+        <div class="status-btn">
           <% if stone.user == current_user %>
           <a href="#"><%= link_to 'Modifier', edit_stone_path(stone), class:"btn-blue"%></a>
           <a href="#"> <%= link_to 'Supprimer', stone_path(stone), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous certain de vouloir supprimer votre offre?"}, class:"btn-pink"%></a>
-          <%end%>
-
-
+</div>
+        <div class="status-dash">
           <% if booking.status == "accept" || booking.status == "decline"%>
               <p class="<%= booking.status == 'accept' ? 'accepted-confirmation' : ' refused-confirmation' %>">
               <strong><%= booking.status.upcase %></strong></p>
               <% end %>
               <p>
-                  <%# y'a un truc casser ==> Error: Form responses must redirect to another location %>
                   <% if booking.status == "pending"%>
                     <%= link_to "accepter", booking_accepted_path(booking), { class: "accepted-link", data: {turbo_method: :patch, turbo_confirm: "Souhaitez-vous accepter ?"} } %> ||
                     <%= link_to "refuser", booking_refused_path(booking), { class: "refused-link", data: {turbo_method: :patch, turbo_confirm: "Souhaitez-vous refuser ?"} } %>
                   <% end %>
-                  <%# ici ^^ %>
-    </div>
+          <%end%>
+          </div>
+            </div>
   </div>
         <% end %>
         <%end%>
 </div>
- <%= link_to "Publier une offre", new_stone_path, class: "btn btn-primary" %>
+<div class="new-stone">
+ <%= link_to "Publier une offre", new_stone_path, class: "btn btn-primary text-center" %>
+</div>
