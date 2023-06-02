@@ -19,7 +19,8 @@
     <% @stones.each do |stone|  %>
     <div class="col-12 col-md-4">
     <div class="card-home-stone">
-      <img src="https://static.wixstatic.com/media/101e87_1b07e41f55b54d5489083a21c025a39d~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/101e87_1b07e41f55b54d5489083a21c025a39d~mv2.jpg" alt="...">
+      <img src="<%= stone.image %>"  alt="...">
+
 
       <div class="card-home-stone-infos">
         <div>
@@ -28,10 +29,12 @@
         </div>
       </div>
       <div class="text-center">
-        <%= link_to 'Voir les détails', root_path, class: "btn-blue"  %>
+        <%= link_to 'Voir les détails', stone_path(stone), class: "btn-blue" %>
       </div>
 
     </div>
+
+
 
 
 
