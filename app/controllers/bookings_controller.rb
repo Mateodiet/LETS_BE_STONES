@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "pending"
     if @booking.save
-      redirect_to espace_path
+      redirect_to resa_path
     else
       redirect_to stone_path(@booking.stone)
     end
