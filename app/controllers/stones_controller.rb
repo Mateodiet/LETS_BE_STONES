@@ -4,8 +4,8 @@ class StonesController < ApplicationController
   end
 
   def show
-    @stone = Stone.find(params[:id])
     @booking = Booking.new
+    @stone = Stone.find(params[:id])
   end
 
   def new
@@ -35,7 +35,7 @@ class StonesController < ApplicationController
   def destroy
     @stone = Stone.find(params[:id])
     @stone.destroy
-    redirect_to stones_path, status: :see_other
+    redirect_to espace_path, status: :see_other
   end
 
   private

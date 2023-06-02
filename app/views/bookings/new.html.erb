@@ -4,8 +4,7 @@
 <div class="container d-flex justify-content-center rounded">
   <div class="w-50 p-3">
     <%= simple_form_for [@stone, @booking], data: { controller: 'flatpickr' } do |f| %>
-      <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
-      <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" } } %>
+        <%= f.input :start_date, as: :string, placeholder: "Dates", label: false, input_html: {data: { controller: "flatpickr" }, style: "width: 30vh; height: 4em;"} %>
       <%= f.input :comment %>
       <%= f.submit 'Ask owner for booking' %>
     <% end %>

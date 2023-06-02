@@ -1,0 +1,21 @@
+<div class="box-dash">
+    <% @bookings.each do |booking| %>
+      <div class="dash-cards">
+        <img class="dash-img" src="<%= booking.stone.image %>" alt="Card image cap">
+          <div class="dash-card-content">
+            <h5 class=""><%= booking.stone.name %></h5>
+            <p class="card-text"> <%= booking.comment %></p>
+              <% if booking.status == "accept" || booking.status == "decline"%>
+              <p class="<%= booking.status == 'accept' ? 'accepted-confirmation' : ' refused-confirmation' %>">
+              <strong><%= booking.status.upcase %></strong></p>
+              <% end %>
+              <p>
+            <p class="card-text"> <%= booking.start_date.strftime('%-d %b. %y') %></p>
+            <p class="card-text"> <%= booking.end_date.strftime('%-d %b. %y') %></p>
+            <br>
+
+                </p>
+            </div>
+      </div>
+                  <% end %>
+</div>
