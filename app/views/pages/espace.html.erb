@@ -1,4 +1,4 @@
-<h1 class="text-center">Bienvenue <%= current_user.username %> dans votre gestionnaire !</h1>
+<h1 class="text-center">Bienvenue dans votre gestionnaire <%= current_user.username %>!</h1>
 <div class="box-dash">
         <% @stones.each do |stone| %>
         <% stone.bookings.each do |booking| %>
