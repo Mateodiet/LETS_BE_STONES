@@ -9,16 +9,19 @@
         <p class=""><%= @stone.description %></p>
   </div>
 
-
-<div class="container d-flex justify-content-center rounded">
-  <div class="w-50 p-3">
-    <%= simple_form_for [@stone, @booking], input_html: {data: { controller: 'flatpickr' }} do |f| %>
-            <%= f.input :start_date, as: :string, placeholder: "Dates", label: false, input_html: {data: { controller: "flatpickr" }, style: "width: 30vh; height: 4em;"} %>
-          <%= f.input :comment %>
-              <%= f.submit 'Ask owner for booking' %>
-            <% end %>
+      <div class="flpkr">
+        <h3 class="text-center mb-4">Réserver <%= @stone.name %></h3>
+          <%= simple_form_for [@stone, @booking], input_html: {data: { controller: 'flatpickr' }} do |f| %>
+          <%= f.input :start_date, label: 'Sélectionner les dates', as: :string, input_html: { data: { controller: "flatpickr" } } %>
+          <%= f.input :comment, label: 'Commentaire' %>
+          <div class="text-center">
+            <%= f.submit 'Réserver', class: "btn-blue mt-3" %>
           </div>
-        </div>
+        <% end %>
+       </div>
+
+
+
         <div class="m-3">
         </div>
       </div>
