@@ -16,7 +16,7 @@ pierro = Stone.create(name:'Pierre Roulée Aventurine', description: 'L’aventu
 Stone.create(name:'Pierre Roulée Sélénite', description: 'La sélénite est une pierre apaisante et harmonieuse', price: 11.99, user: user, image:"https://static.wixstatic.com/media/101e87_b136c089eb8b443d8d1f5de0b72bff8e~mv2.jpg/v1/fill/w_1000,h_750,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/101e87_b136c089eb8b443d8d1f5de0b72bff8e~mv2.jpg")
 Stone.create(name:'Pierre Roulée Améthyste', description: 'Elle clarifie l’esprit, apporte sérénité et dissipe l’anxiété et les angoisses', price: 16.99, user: user, image:"https://static.wixstatic.com/media/101e87_c4d34f1d04ea45b4a0df9624fd8ed9c6~mv2.jpg/v1/fill/w_1000,h_1334,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/101e87_c4d34f1d04ea45b4a0df9624fd8ed9c6~mv2.jpg")
 Stone.create(name:'Collier Cristal De Roche', description: 'amplificateur d’énergie, clarifie le mental, affine notre sensibilité, accompagne une vision nouvelle', price: 30.99, user: user, image:"https://static.wixstatic.com/media/101e87_625b4fb62f4045788bde346b84b67343~mv2.jpg/v1/fill/w_1000,h_1334,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/101e87_625b4fb62f4045788bde346b84b67343~mv2.jpg")
-pierre = Stone.create(name:'Caillou Suprème', description: 'Devenez comme caillou ! Vos pecs prendrons vie.', price: 69.99, user: user_pres, image: "https://i.pinimg.com/originals/6c/45/93/6c4593aa397c76664ba7e073c86dc0d0.jpg")
+Stone.create(name:'Caillou Suprème', description: 'Devenez comme caillou ! Vos pecs prendrons vie.', price: 69.99, user: user_pres, image: "https://i.pinimg.com/originals/6c/45/93/6c4593aa397c76664ba7e073c86dc0d0.jpg")
 
 p "#{Stone.count} stones created"
 
