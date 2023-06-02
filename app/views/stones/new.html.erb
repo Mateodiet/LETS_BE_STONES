@@ -1,6 +1,11 @@
-<%= simple_form_for(@stone) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+
+<h2> Ajoutez une pierre </h2>
+  <%= simple_form_for(@stone) do |f| %>
+    <%= f.input :name, label: "Nom de la pierre"%>
+    <%= f.input :description, label: "Description de la pierre" %>
+    <%= f.input :image, label: "Image(veuillez choisir une image URL)"%>
+    <%= f.input :price, label: "Prix de la pierre"%>
+    <%= f.submit class:"btn-blue" %>
+  <% end %>
+</div>
