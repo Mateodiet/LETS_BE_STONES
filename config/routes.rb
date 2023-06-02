@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :stones do
     resources :bookings, only: [:create, :new]
   end
-  patch "bookings/:id/accept", to: "bookings#accept"
-  patch "bookings/:id/decline", to: "bookings#decline"
+  patch "bookings/:id/accept", to: "bookings#accept", as: :booking_accepted
+  patch "bookings/:id/decline", to: "bookings#decline", as: :booking_refused
   patch "bookings/:id/cancel", to: "bookings#cancel"
-  get "dashboard", to: "pages#dashboard"
+  get "espace", to: "pages#espace"
+  get "resa", to: "pages#resa"
 end

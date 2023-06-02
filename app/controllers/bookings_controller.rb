@@ -5,26 +5,31 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
     @stone = Stone.find(params[:stone_id])
+    dates = booking_params[:start_date].split
+    @booking = Booking.new(comment: booking_params[:comment], start_date: dates[0], end_date: dates[2])
     @booking.stone = @stone
+    @booking.user = current_user
     @booking.status = "pending"
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to espace_path
     else
-      render :new, status: :unprocessable_entity
+      redirect_to stone_path
     end
   end
 
   def accept
     @booking = Booking.find(params[:id])
     @booking.status = "accept"
+    @booking.save
+    redirect_to espace_path
   end
 
   def decline
     @booking = Booking.find(params[:id])
     @booking.status = "decline"
+    @booking.save
+    redirect_to espace_path
   end
 
   def cancel

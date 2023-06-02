@@ -5,10 +5,11 @@
 
 .show-img {
   display: flex;
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   border-bottom: 1px solid grey;
   align-items: center;
+  margin: 0 auto
 }
 
 .stone-content {
@@ -27,7 +28,8 @@
 
 .price-name-bar {
   display: flex;
-  flex-wrap: space-around;
+  align-items: center;
+  justify-content: space-between;
 
 }
 

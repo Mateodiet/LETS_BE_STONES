@@ -1,22 +1,24 @@
-<div class="box-show">
+<div class="box-show mb-4">
   <div class="stones-show">
       <img class="show-img" src="<%= @stone.image %>" alt="<%= @stone.name %>image cap">
         <div class="stone-content"></div>
           <div class="price-name-bar">
-            <h2><%= @stone.name %></h2>
+            <h3><%= @stone.name %></h3>
             <h4><%= @stone.price %>€/Semaine</h4>
           </div>
-            <p class=""><%= @stone.description %></p>
-
-            <%= link_to '  Menu  ', stones_path, class: "btn btn-warning btn-sm mb-2" %>
+        <p class=""><%= @stone.description %></p>
   </div>
 
-  <div class="flpkr">
-        <%= simple_form_for [@stone, @booking], data: { controller: 'flatpickr' } do |f| %>
-          <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
-          <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" } } %>
+
+<div class="container d-flex justify-content-center rounded">
+  <div class="w-50 p-3">
+    <%= simple_form_for [@stone, @booking], input_html: {data: { controller: 'flatpickr' }} do |f| %>
+            <%= f.input :start_date, as: :string, placeholder: "Dates", label: false, input_html: {data: { controller: "flatpickr" }, style: "width: 30vh; height: 4em;"} %>
           <%= f.input :comment %>
-          <%= f.submit 'Ask owner for booking' %>
-        <% end %>
-  </div>
-</div>
+              <%= f.submit 'Ask owner for booking' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="m-3">
+        </div>
+      </div>
