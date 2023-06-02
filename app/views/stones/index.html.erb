@@ -2,6 +2,7 @@
 
 <div class="container">
   <div class="row">
+
     <% @stones.each do |stone|  %>
     <div class="col-12 col-md-4">
     <div class="card-home-stone" id="card-index">
@@ -14,7 +15,7 @@
         </div>
       </div>
       <div class="text-center">
-        <%= link_to 'Voir les détails', root_path, class: "btn-blue"  %>
+        <%= link_to 'Voir les détails', stone_path(stone), class: "btn-blue"  %>
       </div>
 
     </div>
