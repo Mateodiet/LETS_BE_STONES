@@ -3,7 +3,7 @@
       <div class="dash-cards">
         <img class="dash-img" src="<%= booking.stone.image %>" alt="Card image cap">
           <div class="dash-card-content">
-            <h5 class=""><%= booking.stone.name %></h5>
+            <h5 class=""><%= link_to  booking.stone.name, stone_path(booking.stone), class: "text-decoration-none" %></h5>
             <p class="card-text"> <%= booking.comment %></p>
               <% if booking.status == "accept" || booking.status == "decline"%>
               <p class="<%= booking.status == 'accept' ? 'accepted-confirmation' : ' refused-confirmation' %>">
