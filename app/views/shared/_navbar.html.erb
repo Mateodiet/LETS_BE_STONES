@@ -29,7 +29,7 @@
             <%# barre de recherche %>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" style = "background-color:white; border-color:#81b4b4; color:#19A7CE"type="submit">Search</button>
+              <button class="btn btn-outline-success" style = "background-color:white; border-color:#81b4b4; color:#81b4b4"type="submit">Search</button>
             </form>
             <%# barre de recherche %>
 
@@ -42,8 +42,8 @@
                   <li class="nav-item dropdown">
                     <%= image_tag "https://images.unsplash.com/photo-1521133573892-e44906baee46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGllcnJlJTIwcHIlQzMlQTljaWV1c2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                      <%= link_to "Mon espace", dashboard_path, class: "dropdown-item" %>
-                      <%= link_to "Mes réservations", dashboard_path, class: "dropdown-item" %>
+                      <%= link_to "Mon espace", espace_path, class: "dropdown-item" %>
+                      <%= link_to "Mes réservations", resa_path, class: "dropdown-item" %>
                       <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {turbo_method: :delete} %>
                     </div>
                   </li>

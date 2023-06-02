@@ -5,9 +5,11 @@ class PagesController < ApplicationController
     @stones = Stone.last(6)
   end
 
-  def dashboard
+  def espace
     @stones = current_user.stones
-    @bookings = current_user.bookings
   end
 
+  def resa
+    @bookings = current_user.bookings
+  end
 end
